@@ -3,6 +3,7 @@
 #include <string>
 #include <cmath>
 using namespace std;
+int l;
 
 int main()
 {
@@ -11,8 +12,8 @@ int main()
     string a;
     string b;
     double x, y;
-    int d;
-
+    
+    
     for (int x = -7; x < 3; x++)
     {
         if (-6 >= x && x >= -7) // отрезок от -7 до -6
@@ -39,30 +40,15 @@ int main()
 
         fout << y << endl;
     }
-    int d;
-    int mass[10];
-    for (d = 0; d <= 10; d++)
-    {
-        mass[d] = y;
-        cout << "mass=" << mass[d] << "\n";
-    }
-    fout.close();
-
-    cout << "sled" << endl;
-
+     fout.close();
+    float *data = new float[l];
+    l = 0;
     while (getline(fin, b))
     {
-
-        float c = stof(b);
-        for (int i = 0; i < 5; i++)
-        {
-
-            c = c;
-            
-        }
-
-        cout << c << endl;
+        data[l] = stof(b);
+        l++;
     }
-
+    for (int i = 0; i < l; i++)
+        cout << data[i] << "\n";
     fin.close(); // закрываем файл
 }
